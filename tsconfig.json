@@ -3,6 +3,11 @@
     "target": "esnext",                                  /* 変換はbabelでしたいから"esnext"を指定。Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "jsx": "react",                                      /* Specify what JSX code is generated. */
     
+    // "baseUrl": "./src/",
+    // "paths": {
+    //   "@/*": ["*"]
+    // },
+
     "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
     
     /* モジュール解決方法 */
@@ -21,6 +26,6 @@
     "noUnusedParameters": true,                          /* Raise an error when a function parameter isn't read */
     "noImplicitReturns": true,                           /* Enable error reporting for codepaths that do not explicitly return in a function. */
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],            /* コンパイルする対象ファイルを記述する。src配下の全てのts、tsxファイルを指定。 */
+  "include": ["src/**/*.ts", "src/**/*.tsx", "tests/Hello.tsx", "tests/**/*.test.+(ts|tsx|js)"],            /* コンパイルする対象ファイルを記述する。src配下の全てのts、tsxファイルを指定。 */
   "exclude": ["node_modules"],                           /* コンパイルする対象から外すファイルを記述する。 */
 }
