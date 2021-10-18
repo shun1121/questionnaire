@@ -37,8 +37,8 @@
 // };
 
 // export default Hello;
-export const sum = (...a: number[]) => a.reduce((acc, val) => acc + val, 0);
+// export const sum1 = (...a: number[]) => a.reduce((acc, val) => acc + val, 0);
 
-export const sum1: (a: number, b: number) => number = (a, b) => {
-  return a + b
-}
+export const sum: (a: number, b: number) => number = (a, b) => {
+  return a + b;
+};

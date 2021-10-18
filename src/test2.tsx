@@ -1,1 +1,11 @@
-export const sum = (...a: number[]) => a.reduce((acc, val) => acc + val, 0);
+// import { sum } from '../src/Hello';
+
+// test('basic', () => {
+//   expect(sum()).toBe(0);
+// });
+
+// test('basic again', () => {
+//   expect(sum(1, 2)).toBe(3);
+// });
+
+// export const sum = (...a: number[]) => a.reduce((acc, val) => acc + val, 0);
