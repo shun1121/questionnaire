@@ -7,7 +7,7 @@ const TestElements: React.VFC = () => {
     <>
       <h1 data-testid="counter">{counter}</h1>
       <button data-testid="button-up" onClick={() => setCounter(counter + 1)}>
-        Up
+        Usoppu
       </button>
       <button
         disabled
