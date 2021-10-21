@@ -14,6 +14,7 @@ const CheckboxWithLabel: React.FC<{
 }> = ({ name, age, labelOn, labelOff }) => {
   const [isChecked, setIsChecked] = useState(false);
   const [click, setClick] = useState(false);
+  const [text, setText] = useState("");
 
   const onChange = () => {
     setIsChecked(!isChecked);
@@ -21,6 +22,10 @@ const CheckboxWithLabel: React.FC<{
 
   const onClick = () => {
     setClick(!click);
+  };
+
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setText(e.target.value);
   };
 
   return (
@@ -34,6 +39,15 @@ const CheckboxWithLabel: React.FC<{
         <input type="checkbox" checked={isChecked} onChange={onChange} />
         {isChecked ? labelOn : labelOff}
       </label>
+      <div>
+        <input
+          type="text"
+          onChange={handleOnChange}
+          value={text}
+          placeholder="input"
+        />
+        <p>{text}</p>
+      </div>
     </>
   );
 };
