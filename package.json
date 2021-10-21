@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watch",
     "tsc": "tsc",
     "tsc:watch": "tsc -w",
     "webpack:build": "webpack --config webpack.config.js",
@@ -25,10 +27,16 @@
     "@babel/preset-react": "^7.14.5",
     "@babel/preset-typescript": "^7.15.0",
     "@babel/runtime": "^7.15.4",
+    "@testing-library/dom": "^8.10.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^12.1.2",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.0.2",
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
+    "babel-jest": "^27.2.5",
     "babel-loader": "^8.2.2",
     "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
@@ -36,8 +44,10 @@
     "eslint-plugin-react": "^7.26.1",
     "eslint-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.2.5",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
     "typescript": "^4.4.3",
     "webpack": "^5.56.1",
     "webpack-cli": "^4.8.0",
@@ -46,5 +56,43 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "babel-jest",
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!(xxxx.*?\\.js$))"
+    ],
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/tests/**/*.test.+(ts|tsx|js)"
+    ],
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ],
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    }
+  },
+  "eslintIgnore": [
+    "/.eslintrc.js",
+    "/webpack.config.js"
+  ]
 }
