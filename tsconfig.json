@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "skipLibCheck": true,
     "target": "esnext",                                  /* 変換はbabelでしたいから"esnext"を指定。Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
     "jsx": "react",                                      /* Specify what JSX code is generated. */
     
